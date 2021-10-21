@@ -20,6 +20,20 @@ keyboard.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("keydown", (e) => {
+  const letter = e.key;
+  let btn;
+  const keys = document.getElementsByClassName("key");
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const overlay = document.getElementById("overlay");
+    if (key.innerText === letter && overlay.style.display === "none") {
+      game.handleInteraction(letter, key);
+      game.checkForWin();
+    }
+  }
+});
+
 function reset() {
   const phraseDiv = document.querySelector("#phrase");
   const phraseUL = phraseDiv.children[0];
