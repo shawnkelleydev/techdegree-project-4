@@ -18,7 +18,7 @@ class Game {
   startGame() {
     const overlay = document.getElementById("overlay");
     overlay.style.display = "none";
-    this.activePhrase = new Phrase(this.getRandomPhrase());
+    this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
   }
 
@@ -67,10 +67,10 @@ class Game {
 
 function createPhrases() {
   let arr = [];
-  arr.push("not i said the fly");
-  arr.push("neither here nor there");
-  arr.push("merry christmas");
-  arr.push("knock on wood");
-  arr.push("i left my heart in san francisco");
+  arr.push(new Phrase("not i said the fly"));
+  arr.push(new Phrase("merry christmas"));
+  arr.push(new Phrase("i left my heart in san francisco"));
+  arr.push(new Phrase("knock on wood"));
+  arr.push(new Phrase("neither here nor there"));
   return arr;
 }
